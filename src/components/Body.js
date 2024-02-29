@@ -10,13 +10,13 @@ const Body = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Amritesh I am in body");
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const newUser = {
           userId: user.uid,
           email: user.email,
           displayName: user.displayName,
+          photoURL: user.photoURL,
         };
         dispatch(addUser(newUser));
         navigate("/browser");
@@ -25,7 +25,9 @@ const Body = () => {
         navigate("/");
       }
     });
+    return () => unsubscribe();
   }, []);
+
   return (
     <div>
       <Outlet />

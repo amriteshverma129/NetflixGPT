@@ -14,18 +14,25 @@ const Header = () => {
         console.log(error);
       });
   };
-  console.log(user);
+
   return (
-    <div className="w-full flex justify-between p-6">
-      <div className="z-10 w-40 ">
+    <div className="w-full h-20 flex justify-between p-6 bg-transparent absolute z-10">
+      <div className="w-40 ">
         <NetflixLogo />
       </div>
-      <span
-        className="cursor-pointer font-bold block"
-        onClick={() => handleSignOut()}
-      >
-        Sign out
-      </span>
+      <div className="flex">
+        <img
+          src={user?.photoURL}
+          alt="profilephoto"
+          className="h-10 w-10"
+        ></img>
+        <span
+          className="cursor-pointer font-bold block text-white"
+          onClick={() => handleSignOut()}
+        >
+          Sign out
+        </span>
+      </div>
     </div>
   );
 };

@@ -14,8 +14,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [isSignUpForm, setIsSignUpForm] = useState(false);
   const [signInButton, setSignInButton] = useState({
     btnText: "Sign In",
@@ -108,6 +111,13 @@ const Login = () => {
         form.email,
         form.password
       );
+      const user = {
+        email: response.user.email,
+        userId: response.user.uid,
+        displayName: `${form.firstName} ${form.lastName}`,
+        photoURL: "https://avatars.githubusercontent.com/u/81510482?v=4",
+      };
+      dispatch(addUser(user));
       await updateProfile(response.user, {
         displayName: `${form.firstName} ${form.lastName}`,
         photoURL: "https://avatars.githubusercontent.com/u/81510482?v=4",
