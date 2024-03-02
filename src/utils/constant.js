@@ -1,6 +1,3 @@
-export const TMDB_API_KEY = "eb3d21c0791eda1b210662627ce2a846";
-export const TMDB_ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYjNkMjFjMDc5MWVkYTFiMjEwNjYyNjI3Y2UyYTg0NiIsInN1YiI6IjY1ZGY1YjgwOThmMWYxMDE2NDk5MzRhOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TYWVRsVrmP7aHavlHKnO1rnNwbQP2mwByEkNHOVFInA";
 export const NOW_MOVIES_URL =
   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
 export const UPCOMING_MOVIES_URL =
@@ -15,10 +12,6 @@ export const TMDB_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: `Bearer ${TMDB_ACCESS_TOKEN}`,
+    Authorization: `Bearer ${process.env.REACT_APP_TMDB_ACCESS_TOKEN}`,
   },
 };
-
-export const OPEN_AI_KEY =
-  "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";
-// "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";
