@@ -28,7 +28,7 @@ const Body = () => {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [pathname, dispatch, navigate]);
 
   return (
     <div>

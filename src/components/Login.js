@@ -50,7 +50,7 @@ const Login = () => {
     validateChange(name, value, setError, error);
   };
 
-  useEffect(() => {
+  const handleButtons = () => {
     if (isSignUpForm) {
       if (
         form.email &&
@@ -86,6 +86,9 @@ const Login = () => {
       ...signInButton,
       disabled: true,
     });
+  };
+  useEffect(() => {
+    handleButtons();
   }, [form]);
 
   const handleSignIn = async () => {
@@ -134,7 +137,7 @@ const Login = () => {
     <div className="h-[100vh] w-[100vw] relative">
       <img
         src="/images/Netflex-Background-Img.jpeg"
-        alt="Background image"
+        alt="Background"
         className="h-[100%] w-[100%]"
       />
       <div className="inset-0 absolute bg-black bg-opacity-50 justify-center flex items-center ">

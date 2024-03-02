@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import SearchIcon from "../icons/SearchIcon";
 import openai from "../utils/openAI";
@@ -54,7 +54,7 @@ const GPTSearch = () => {
       <div className="h-[100vh] w-[100vw] relative">
         <img
           src="/images/Netflex-Background-Img.jpeg"
-          alt="Background image"
+          alt="Background"
           className="h-full w-full"
         />
         <div className="inset-0 absolute bg-black bg-opacity-50 justify-center flex items-center flex-col ">
