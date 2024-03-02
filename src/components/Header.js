@@ -4,10 +4,12 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const user = useSelector((store) => store.user.user);
   const location = useLocation();
+  const { t, i18n } = useTranslation("common");
 
   const handleSignOut = async () => {
     signOut(auth)
@@ -22,8 +24,13 @@ const Header = () => {
       <div className="w-40 ">
         <Link to="/browser">
           <NetflixLogo />
+          <div className="text-white">{t("hello")}</div>
         </Link>
       </div>
+      <select onChange={(e) => i18n.changeLanguage(e.target.value)}>
+        <option value="en-US">English</option>
+        <option value="es-ES">Spanish</option>
+      </select>
       <div className="flex">
         {location.pathname !== "/GPTSearch" && (
           <Link to="/GPTSearch">
