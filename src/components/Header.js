@@ -3,9 +3,11 @@ import NetflixLogo from "../icons/NetflixLogo";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const user = useSelector((store) => store.user.user);
+  const location = useLocation();
 
   const handleSignOut = async () => {
     signOut(auth)
@@ -18,9 +20,18 @@ const Header = () => {
   return (
     <div className="w-full h-20 flex justify-between p-6 bg-transparent absolute z-10">
       <div className="w-40 ">
-        <NetflixLogo />
+        <Link to="/browser">
+          <NetflixLogo />
+        </Link>
       </div>
       <div className="flex">
+        {location.pathname !== "/GPTSearch" && (
+          <Link to="/GPTSearch">
+            <button className="px-4 py-2 text-white rounded-md bg-slate-500 mr-3">
+              GPT Search
+            </button>
+          </Link>
+        )}
         <img
           src={user?.photoURL}
           alt="profilephoto"

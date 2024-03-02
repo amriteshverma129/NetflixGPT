@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { auth } from "../utils/firebase";
@@ -8,6 +8,8 @@ import { onAuthStateChanged } from "firebase/auth";
 const Body = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -19,7 +21,7 @@ const Body = () => {
           photoURL: user.photoURL,
         };
         dispatch(addUser(newUser));
-        navigate("/browser");
+        if (pathname === "/") navigate("/browser");
       } else {
         dispatch(removeUser());
         navigate("/");

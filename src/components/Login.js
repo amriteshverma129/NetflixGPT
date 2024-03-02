@@ -137,7 +137,7 @@ const Login = () => {
         alt="Background image"
         className="h-[100%] w-[100%]"
       />
-      <div className="top-0 right-0 left-0 bottom-0 absolute bg-black bg-opacity-50 justify-center flex items-center ">
+      <div className="inset-0 absolute bg-black bg-opacity-50 justify-center flex items-center ">
         <div className="absolute z-10 w-40 top-5 left-5 ">
           <NetflixLogo />
         </div>

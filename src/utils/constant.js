@@ -9,7 +9,8 @@ export const POPULAR_MOVIES_URL =
   "https://api.themoviedb.org/3/movie/popular?language=en-US&page=3";
 export const TOP_RATED_MOVIES_URL =
   "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=4";
-
+export const SEARCH_MOVIE_URL =
+  "https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query=";
 export const TMDB_OPTIONS = {
   method: "GET",
   headers: {
@@ -17,3 +18,7 @@ export const TMDB_OPTIONS = {
     Authorization: `Bearer ${TMDB_ACCESS_TOKEN}`,
   },
 };
+
+export const OPEN_AI_KEY =
+  "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";
+// "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";
