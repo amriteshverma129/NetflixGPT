@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "../utils/userSlice";
-import { auth } from "../utils/firebase";
+import { addUser, removeUser } from "../utils/Slice/userSlice";
+import { auth } from "../lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Body = () => {

@@ -7,12 +7,12 @@ const GPTMovieSuggestion = () => {
 
   if (!movieResults) return <></>;
   return (
-    <div className="relative w-full p-10">
-      {movieResults.map((movieArray) => {
-        return (
-          <MovieList movieList={movieArray} title={"Now Playing Movies"} />
-        );
-      })}
+    <div className="overflow-y-scroll h-[500px] bg-black opacity-70 m-5">
+      <div className="relative w-full p-10">
+        {movieResults.map((movieArray) => {
+          return <MovieList movieList={movieArray} title={""} />;
+        })}
+      </div>
     </div>
   );
 };

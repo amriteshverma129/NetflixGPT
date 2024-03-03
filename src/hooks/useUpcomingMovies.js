@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { TMDB_OPTIONS, UPCOMING_MOVIES_URL } from "../utils/constant";
+import { TMDB_OPTIONS, UPCOMING_MOVIES_URL } from "../utils/variables/constant";
 import { useDispatch, useSelector } from "react-redux";
-import { addUpcomingMovies } from "../utils/movieSlice";
+import { addUpcomingMovies } from "../utils/Slice/movieSlice";
 
 const getMovieList = async (dispatch) => {
   const response = await fetch(UPCOMING_MOVIES_URL, TMDB_OPTIONS);

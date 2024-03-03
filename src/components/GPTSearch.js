@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import SearchIcon from "../icons/SearchIcon";
-import openai from "../utils/openAI";
+import openai from "../lib/openAI";
 import GPTMovieSuggestion from "./GPTMovieSuggestion";
-import { SEARCH_MOVIE_URL, TMDB_OPTIONS } from "../utils/constant";
+import { SEARCH_MOVIE_URL, TMDB_OPTIONS } from "../utils/variables/constant";
 import { useDispatch } from "react-redux";
-import { addGPTSearchResults } from "../utils/gptSlice";
+import { addGPTSearchResults } from "../utils/Slice/gptSlice";
 
 const GPTSearch = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -57,10 +57,10 @@ const GPTSearch = () => {
           alt="Background"
           className="h-full w-full"
         />
-        <div className="inset-0 absolute bg-black bg-opacity-50 justify-center flex items-center flex-col ">
+        <div className="inset-0 absolute bg-black bg-opacity-50  ">
           <form
             onSubmit={(e) => handleSubmit(e)}
-            className="p-4 w-[600px] bg-black rounded-md "
+            className="p-4 w-[600px] bg-black rounded-md margin mt-44 mx-auto"
           >
             <div className="flex w-full relative ">
               <input

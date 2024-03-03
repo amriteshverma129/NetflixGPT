@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { POPULAR_MOVIES_URL, TMDB_OPTIONS } from "../utils/constant";
+import { POPULAR_MOVIES_URL, TMDB_OPTIONS } from "../utils/variables/constant";
 import { useDispatch, useSelector } from "react-redux";
-import { addPopularMovies } from "../utils/movieSlice";
+import { addPopularMovies } from "../utils/Slice/movieSlice";
 
 const getMovieList = async (dispatch) => {
   const response = await fetch(POPULAR_MOVIES_URL, TMDB_OPTIONS);

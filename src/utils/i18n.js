@@ -4,6 +4,8 @@ import commonEN from "../locale/en-US/common.json";
 import commonES from "../locale/es-ES/common.json";
 import navbarEN from "../locale/en-US/navbar.json";
 import navbarES from "../locale/es-ES/navbar.json";
+import navbarZH from "../locale/zh-CN/navbar.json";
+import commonZH from "../locale/zh-CN/common.json";
 
 // Configure i18next
 i18n.use(initReactI18next).init({
@@ -15,6 +17,10 @@ i18n.use(initReactI18next).init({
     es: {
       common: commonES,
       navbar: navbarES,
+    },
+    zh: {
+      common: commonZH,
+      navbar: navbarZH,
     },
   },
   lng: "en", // Default language

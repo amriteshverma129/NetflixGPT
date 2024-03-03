@@ -1,7 +1,10 @@
 import { useEffect } from "react";
-import { TMDB_OPTIONS, TOP_RATED_MOVIES_URL } from "../utils/constant";
+import {
+  TMDB_OPTIONS,
+  TOP_RATED_MOVIES_URL,
+} from "../utils/variables/constant";
 import { useDispatch, useSelector } from "react-redux";
-import { addTopRatedMovies } from "../utils/movieSlice";
+import { addTopRatedMovies } from "../utils/Slice/movieSlice";
 
 const getMovieList = async (dispatch) => {
   const response = await fetch(TOP_RATED_MOVIES_URL, TMDB_OPTIONS);

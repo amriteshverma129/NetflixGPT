@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { TMDB_OPTIONS } from "../utils/constant";
+import { TMDB_OPTIONS } from "../utils/variables/constant";
 import { useDispatch } from "react-redux";
-import { addTrailer } from "../utils/movieSlice";
+import { addTrailer } from "../utils/Slice/movieSlice";
 
 const getMovieTrailer = async (dispatch, movie_id) => {
   const response = await fetch(

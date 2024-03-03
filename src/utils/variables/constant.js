@@ -15,3 +15,20 @@ export const TMDB_OPTIONS = {
     Authorization: `Bearer ${process.env.REACT_APP_TMDB_ACCESS_TOKEN}`,
   },
 };
+export const MULTI_LINGUAL_ARR = [
+  {
+    id: "english-1",
+    language: "English",
+    lang: "en-US",
+  },
+  {
+    id: "spanish-2",
+    language: "Spanish",
+    lang: "es-ES",
+  },
+  {
+    id: "chinese-3",
+    language: "Chinese",
+    lang: "zh-CN",
+  },
+];
